@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body{
+            padding-top: 65px; 
+        }
+        .q1{
+            display: inline-block;
+        }
+        .formBody{
+            max-width: 660px;
+            margin: 0 auto;
+        }
+        .formFields{
+            display: inline-block;
+            margin: 1vh 2vw;
+        }
+        .formLabel{
+            width: 100px;
+        }
+        .explain{
+            margin-top: 5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar" style="margin-right: 2vw">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="#" class="navbar-brand mr-auto"><img src="image001.png"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="#q1" class="nav-link">Q1</a></li>
+                    <li class="nav-item"><a href="#q2" class="nav-link">Q2</a></li>
+                    <li class="nav-item"><a href="#q3" class="nav-link">Q3</a></li>
+                    <li class="nav-item"><a href="#q4" class="nav-link">Q4</a></li>
+                    <li class="nav-item"><a href="#q5" class="nav-link">Q5</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h3>Wellington-Altus Private Wealth Code Test</h1>
+                    <p>Applicate: Hanzhang Zhao</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row row-content align-items-center">
+            <div class="col col-sm col-md">
+                <!-- ------------------------------------------------Q1-------------------------------------------------------- -->
+                <h3 id="q1">Q1</h3>
+                <div class="q1">
+                        pseudo: (please see test.html for entire implementation)
+                        <code>
+                    <pre>
+    var index = 0;
+    for (var i = 0; i < 9; i++) {                
+        for (var j = 0; j < 4; j++) {
+            index += 1;
+        }
+    }                          
+                        </pre>
+                    </code>
+                    <input type="button" value="generate that table" onclick="generate_table();this.onclick=null" />
+                    <div id="tableDiv"></div>
+                </div>
+                <div class="q1">
+                        pseudo: (please see test.html for entire implementation)
+                        <code>
+                    <pre>
+    var index = 0;
+    while (index < 8*table.rows[0].cells.length) {
+        for (var j = 1; j <= table.rows[0].cells.length; j++) {
+            cell=addRow.insertCell(j-1);
+            cell.innerHTML = j+3+index;
+        }
+        index += 4;
+    }        
+                        </pre>
+                    </code>
+                <input type="button" value="generate that table 2" onclick="generate_table2();this.onclick=null" />
+                <div id="tableDiv2"></div>
+                    </div>
+                
+                
+                <hr />
+            </div>
+        </div>
+
+
+        <div class="row row-content align-items-center">
+            <div class="col col-sm col-md">
+                <!-- -------------------------------------------------------Q2------------------------------------------------------------ -->
+                <h3 id="q2">Q2</h3>
+                <p>Error logs should contain:</p>
+                <ul>
+                    <li>
+                        We have two major methods of error logging: try-catch and window.onerror. 
+                    </li>
+                    <li>
+                        When we use window.onerror, we should at least log the error message, path or url of that error occured and which line
+                        the error occured (msg, url, row, col, error). 
+                    </li>
+                    <li>
+                        When it comes to try-catch method, it could cathch run time error, as well as error description, stack info, line/column
+                        number, file that error occured. Hence, try-catch method will give us more detailed error when we expect specific error
+                        will occur. Unlike window,onerror method,try-catch could not catch asynchronous error. This pattern will effectively
+                        create error boundaries in your program so that the whole thing doesn’t crash due to a single error.
+                    </li>
+                    <li>
+                        Besides, we could combine js error log with server-side logs (which was sent to the server by Ajax) to check specific 
+                        HTTP status code to troubleshooting the error.
+                    </li>
+                </ul>
+                <hr />
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col col-sm col-md">
+
+                <!-- ------------------------------------------------Q3------------------------------------------------------------ -->
+                <h3 id="q3">Q3</h3>
+                <div id="q3a">
+                    <p>A.</p>
+                    <code>
+                        <pre>
+var x = "1-10000,2-10000,3-10000";
+var mapObj = {
+    1: "Tony Stark",
+    2: "Bruce Wayne",
+};
+x = x.replace(/^1|2/gi, function (matched) {
+    return mapObj[matched];
+});
+x = x.replace(/3.*$/gi, "")
+x = x.replace(/,/g, "&lt;br /&gt;")
+x = x.replace(/(?!^)(?=(\d{3})+$)/g, ",");
+document.write(x)                           
+                        </pre>
+                    </code>
+                    <script>
+                        var x = "1-10000,2-10000,3-10000";
+                        var mapObj = {
+                            1: "Tony Stark",
+                            2: "Bruce Wayne",
+                        };
+                        x = x.replace(/^1|2/gi, function (matched) {
+                            return mapObj[matched];
+                        });
+                        x = x.replace(/3.*$/gi, "")
+                        x = x.replace(/,/g, "<br />")
+                        x = x.replace(/(?!^)(?=(\d{3})+$)/g, ",");
+                        document.write(x)
+                    </script>
+                </div>
+                <br>
+                <div id="q32">
+                    <p>B.</p>
+                    <code>
+                    <pre>
+var x = "1-10000,2-10000,3-10000";
+var mapObj = {
+    1: "Tony Stark",
+    2: "Bruce Wayne",
+};
+x = x.replace(/^1|2/gi, function (matched) {
+    return mapObj[matched];
+});
+x = x.replace(/3.*$/gi, "")
+x = x.replace(/,/g, "&lt;br /&gt;")
+x = x.replace(/(?!^)(?=(\d{3})+$)/g, ",");
+x = x.replace(/(?=.*[-])1/, "2")
+document.write(x)
+                    </pre>
+                    </code>
+                    <script>
+                        var x = "1-10000,2-10000,3-10000";
+                        var mapObj = {
+                            1: "Tony Stark",
+                            2: "Bruce Wayne",
+                        };
+                        x = x.replace(/^1|2/gi, function (matched) {
+                            return mapObj[matched];
+                        });
+                        x = x.replace(/3.*$/gi, "")
+                        x = x.replace(/,/g, "<br />")
+                        x = x.replace(/(?!^)(?=(\d{3})+$)/g, ",");
+                        x = x.replace(/(?=.*[-])1/, "2")
+                        document.write(x)
+                    </script>
+
+                </div>
+                <hr />
+            </div>
+        </div>
+
+
+    <div class="row row-content align-items-center">
+        <div class="col col-sm col-md">
+            <!-- -------------------------------------------------------Q4------------------------------------------------------------ -->
+             <h3 id="q4">Q4</h3>
+             <p>worst design/design element:</p>
+                 <ul>
+                    <li>
+                        <strong>non-responsive design:</strong> Tablets and smartphones are becoming even more popular ways than desktop browsing. The websites
+                        should always be responsive and support mobile devices, otherwise you will lose lots of visitors.
+                    </li>
+                    <li>
+                        <strong>deprecated HTML elements:</strong> There are some older html tags and attributes, such as &lt;iframe&gt;,&lt;dir&gt;,&lt;center&gt;,etc.,
+                        which has declared deprecated or forbidden by W3C. These older HTML elements will lose support of browsers in the long run. Hence,
+                        we better avoid these elements.
+                    </li>
+                    <li>
+                        <strong>use &lt;table&gt; for formating purpose, or use &lt;h1&gt;-&lt;h7&gt; to adjust font weight:</strong>  tables can cause design flaws
+                        and misplacements in different browsers. Tables should be used to display table information rather than layout purpose. And these header tags
+                        play an important role in SEO. Therefore, we should only use &lt;div&gt; and CSS for layout.
+                    </li>
+                    <li>
+                        <strong>extra large images:</strong> large images not only have the ability to significantly hamper load speed/user experience but also critical to SEO.
+                        A large image is going to take a long time to load up. Hence, we should avoid using these large images, especially with TIFF and BMP format.
+                    </li>
+                    <li>
+                        <strong>text graphics:</strong> some websites favor images containing text over live text, it is commonly seen that a website use an image to display their logo. 
+                        The reason to avoid is that these graphics take a lot longer to load compared to a simple font alternative, and search engines can't read
+                        text on images.
+                    </li>
+                    <li>
+                        <strong>carousels:</strong> carousels were once an unparalleled trend, but they hide important content, as not many users engage with them. These high-resolution
+                        images slow down the loading time of the page.
+                    </li>
+                    <li>
+                        <strong>pop-ups:</strong> pop-ups sometimes greatly damage usability and user experience. It gives a feeling that you don’t care about customer experience, and 
+                        in turn it will punish your SEO and number of visitors.
+                    </li>
+                    <li>
+                        <strong>without test for each browsers:</strong> there might be small differece between the layout of the webpage in each browsers since browsers have their own
+                        default styling for elements. So, we better test our websites on major browsers.
+                    </li>
+                    <li>
+                        <strong>lacks contrast design, messy design, inconsistent design and bad navigation:</strong> these are some obvious bad designs we should avoid. Not much can
+                        be explained.
+                    </li>
+                    <li>
+                        <strong>flash:</strong> today, fewer and fewer browsers and platforms support Flash, which seriously impairs the user experience. It is a dying technology we should avoid.
+                    </li>
+                 </ul>
+             
+             <hr />
+        </div>
+    </div>
+
+    <div class="row row-content align-items-center">
+        <div class="col col-sm col-md">
+            <!-- -------------------------------------------------------Q5------------------------------------------------------------ -->
+            <h3 id="q5">Q5</h3>
+
+            <div id="pdfForm">
+                <div class="formHeading" style="text-align: center">
+                    <h3>Wellington-Altus Private Wealth Inc</h3>
+                    <p>Set Up a Meeting</p>
+                </div>
+                <div class="formBody">
+                    <div class="formFields">
+                        <label for="firstName" class="formLabel">First Name: </label>
+                        <input type="text" id="firstName" value="">
+                    </div>
+                    <div class="formFields">
+                        <label for="lastName" class="formLabel">Last Name: </label>
+                        <input type="text" id="lastName">
+                    </div>
+                    <div class="formFields">
+                        <label for="email" class="formLabel">Email: </label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="formFields">
+                        <label for="phone" class="formLabel">Phone: </label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="formFields">
+                        <label for="phone">Appointment Time: </label>
+                        <select id="time">
+                            <option value="8:30 - 11:30">8:30 - 11:30</option>
+                            <option value="11:30 - 14:30">11:30 - 14:30</option>
+                            <option value="14:30 - 17:30">14:30 - 17:30</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pdfButton" style="text-align: center">
+                <button id="generatePDF">Generate PDF</button>
+            </div>
+            <div class="explain">
+                <p>
+                    <strong>Explanation: </strong> 
+                </p>
+                <p>
+                        Since the description of this scenario is relatively berief, I only implemented a header with a form which takes in 
+                        user names, contact info and appointment time period. Also, a submit button is also needed to trigger the PDF generate event. 
+                </p>
+                <p>
+                    When it comes to real life situation, each input field has to be checked if the field is empty, if user inputs are valid by
+                    using regex before the form is sent to the server.
+                </p>
+                <p>
+                    A dropdown list can offer user some time period to make appointment, it could save user some efforts writing down these time periods. These
+                    select options can also bind to the data from backend to check if time periods still available.  
+                </p>
+                <p>
+                    As for layout, I give labels a fixed width such that input fields will align to each other. And hence the form looks more straightforward.
+                </p>
+            </div>
+                <hr />
+            </div>
+
+            <script>
+                var generate = document.getElementById("generatePDF");
+                generate.addEventListener('click', generatePDF);
+
+                var doc = new jsPDF();
+
+
+                function generatePDF() {
+                    var fname = document.getElementById("firstName").value;
+                    var lname = document.getElementById("lastName").value;
+                    var email = document.getElementById("email").value;
+                    var phone = document.getElementById("phone").value;
+                    var time = document.getElementById("time").value;
+                    doc.text("Client Name: " + fname + " " + lname, 30, 30);
+                    doc.text("Client Email: " + email, 30, 40);
+                    doc.text("Client Phone: " + phone, 30, 50);
+                    doc.text("Appointment time: " + time, 30, 60);
+
+                    doc.save('file.pdf');
+                }
+            </script>
+        </div>
+    </div>
+</div>
+    
+
+
+    <!-- -----------------------------Q1 script------------------------------- -->
+    <script>
+        function generate_table() {
+            var tableDiv = document.getElementById("tableDiv");
+            // create table element
+            var table = document.createElement("table");
+            table.id = "table";
+            var tableBody = document.createElement("tbody");
+
+            var index = 0;
+            for (var i = 0; i < 9; i++) {
+                // create table row
+                var row = document.createElement("tr");
+
+                for (var j = 0; j < 4; j++) {
+                    // create table cell
+                    var cell = document.createElement("td");
+                    var cellText = document.createTextNode(index);
+                    index += 1;
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                }
+                tableBody.appendChild(row);
+            }
+            table.appendChild(tableBody);
+            tableDiv.append(table);
+
+            // insert table header
+            var thead = document.createElement("thead");
+            var headRow = document.createElement("tr");
+            ["X", "A", "B", "C", "D"].forEach(function (el) {
+                var th = document.createElement("th");
+                th.appendChild(document.createTextNode(el));
+                headRow.appendChild(th);
+            });
+            thead.appendChild(headRow);
+            table.appendChild(thead);
+
+            // insert column header to the table
+            var tblBodyObj = document.getElementById("table").tBodies[0];
+            for (var i = 0; i < tblBodyObj.rows.length; i++) {
+                var newCell = tblBodyObj.rows[i].insertCell(0);
+                newCell.innerHTML = i;
+            }
+        }
+ 
+            function generate_table2() {
+                var tableDiv = document.getElementById("tableDiv2");
+                // create table element
+                var table = document.createElement("table");
+                table.id = "table2";
+                var tableBody = document.createElement("tbody");
+                var row = document.createElement("tr");
+                
+    
+                for (var i = 0; i < 4; i++) {
+                    // create table cell
+                    var cell = document.createElement("td");
+                    var cellText = document.createTextNode(i);
+
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                
+                    tableBody.appendChild(row);
+                }
+                table.appendChild(tableBody);
+                tableDiv.append(table);
+    
+                var index = 0;
+                while (index < 8*table.rows[0].cells.length) {
+                    var addRow = table.insertRow(table.rows.length); 
+
+                    // insert table cells to the new row
+                    for (var j = 1; j <= table.rows[0].cells.length; j++) {
+                        cell=addRow.insertCell(j-1);
+                        cell.innerHTML = j+3+index;
+                    }
+                    index += 4;
+                }
+
+                // insert table header
+                var thead = document.createElement("thead");
+                var headRow = document.createElement("tr");
+                ["X", "A", "B", "C", "D"].forEach(function (el) {
+                    var th = document.createElement("th");
+                    th.appendChild(document.createTextNode(el));
+                    headRow.appendChild(th);
+                });
+                thead.appendChild(headRow);
+                table.appendChild(thead);
+    
+                // insert column header to the table
+                var tblBodyObj = document.getElementById("table2").tBodies[0];
+                for (var i = 0; i < tblBodyObj.rows.length; i++) {
+                    var newCell = tblBodyObj.rows[i].insertCell(0);
+                    newCell.innerHTML = i;
+                }
+
+            }
+
+        </script>
+</body>
+
+</html>
