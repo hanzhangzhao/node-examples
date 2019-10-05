@@ -53,6 +53,20 @@ app.use(passport.initialize());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// function auth(req, res, next) {
+
+//   if (!req.user) {
+//     var err = new Error('You are not authenticated!');
+//     err.status = 403;
+//     next(err);
+//   }
+//   else {
+//       next();
+//   }
+// }
+
+// app.use(auth);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/dishes', dishRouter);
